@@ -10,6 +10,7 @@ namespace ArrayBiDim
             
             int x = 0, y = 0, horInput = 0, verInput = 0;
             bool loop = true;
+            float lineAverage = 0;
 
             while (loop == true)
             {
@@ -56,12 +57,27 @@ namespace ArrayBiDim
             {
                 for(int j = 0; j < verInput; j ++)
                 {
-                    System.Console.Write($"Insert a value for position [{i},{j}]: ");
+                    System.Console.Write($"Insert a numeric value for position [{i},{j}]: ");
                     arrayBiDim [i,j] = float.Parse(Console.ReadLine());
-                    System.Console.WriteLine(arrayBiDim[i,j]);
+                    //System.Console.WriteLine(arrayBiDim[i,j]);
                 }
             }
 
+            for (int i = 0; i < horInput; i++)
+            {
+                float average = 0;
+                for (int j = 0; j < verInput; j++)
+                {
+                    average += arrayBiDim[i,j];
+                }
+                average /= verInput;
+                lineAverage += average;
+                
+                System.Console.WriteLine($"Line {i} average is {average}");
+            }
+
+            lineAverage /= horInput;
+            System.Console.WriteLine($"Average of all lines is {lineAverage}");
         }
     }
 }
