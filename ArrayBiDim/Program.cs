@@ -50,6 +50,18 @@ namespace ArrayBiDim
 
             System.Console.WriteLine($"{horInput} | {verInput}");
 
+            float [,] arrayBiDim = new float [horInput,verInput];
+
+            for(int i = 0; i < horInput; i ++)
+            {
+                for(int j = 0; j < verInput; j ++)
+                {
+                    System.Console.Write($"Insert a value for position [{i},{j}]: ");
+                    arrayBiDim [i,j] = float.Parse(Console.ReadLine());
+                    System.Console.WriteLine(arrayBiDim[i,j]);
+                }
+            }
+
         }
     }
 }
