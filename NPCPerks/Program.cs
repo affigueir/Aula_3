@@ -36,9 +36,25 @@ namespace NPCPerks
                 //System.Console.WriteLine($"NPC {i + 1} has {mySkills[i]}\n");
             }
 
-                foreach (NPCSkills item in mySkills)
+            
+                /* foreach (NPCSkills item in mySkills)
                 {
-                    System.Console.WriteLine($"NPC has {item}");
+                    int i = 1;
+                    System.Console.WriteLine($"NPC {i} has {item}");
+                    if (i < npcNum)
+                        i++;
+                    else
+                        continue;
+                } */
+
+                for (int i = 0; i< mySkills.Length; i++)
+                {
+                    NPCSkills skills = mySkills[i];
+                    if(skills == (NPCSkills)10)
+                        System.Console.WriteLine($"NPC {i + 1} has {skills} and shall win all fights!");
+
+                    else
+                        System.Console.WriteLine($"NPC {i + 1} has {skills}");
                 }
             
 
