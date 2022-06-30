@@ -6,10 +6,10 @@ namespace NPCPerks
     {
         static void Main(string[] args)
         {
-            NPCSkills mySkills = (NPCSkills) 0;
             
             Console.WriteLine("How many NPC's are there?");
             int npcNum = Int32.Parse(Console.ReadLine());
+            NPCSkills [] mySkills = new NPCSkills[npcNum];
             
             for (int i = 0; i < npcNum; i++)
             {
@@ -18,13 +18,13 @@ namespace NPCPerks
                     int x = Convert.ToInt32(Math.Pow(2, j));
                     NPCSkills currentSkill = (NPCSkills) x;
 
-                    System.Console.WriteLine($"NPC {j} | Answer with 'yes' or 'no'");
+                    System.Console.WriteLine($"NPC {i + 1} | Answer with 'yes' or 'no'");
                     System.Console.WriteLine($"Does he have {currentSkill}");
                     string input = Console.ReadLine();
 
                     if (input == "yes")
                     {
-                        mySkills += x;
+                        mySkills[i] += x;
                     }
 
                     else
@@ -33,10 +33,15 @@ namespace NPCPerks
                     }
                 }
                 
-
+                //System.Console.WriteLine($"NPC {i + 1} has {mySkills[i]}\n");
             }
 
-            System.Console.WriteLine(mySkills);
+                foreach (NPCSkills item in mySkills)
+                {
+                    System.Console.WriteLine($"NPC {i} has {item}");
+                }
+            
+
         }
     }
 }
