@@ -38,7 +38,7 @@ namespace NPCPerks
 
                 foreach (NPCSkills item in mySkills)
                 {
-                    System.Console.WriteLine($"NPC {i} has {item}");
+                    System.Console.WriteLine($"NPC has {item}");
                 }
             
 
